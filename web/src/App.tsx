@@ -1,7 +1,11 @@
 import { useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { Cocktail } from "./Cocktail";
-import { getRecommendations, ingredients } from "./engine";
+import { getRecommendations, recipes } from "./engine";
+import type { Inventory, InventoryState, Recommendation } from "./engine";
+import { loadInventory, saveInventory } from "./inventory";
+import { Cabinet } from "./Cabinet";
+import { RecipeDialog } from "./RecipeDialog";
 
 const moods = [
   {
@@ -55,6 +59,10 @@ const tagNames: Record<string, string> = {
   fruity: "果香",
   tropical: "热带",
   bitter: "微苦",
+  coffee: "咖啡",
+  dry: "干爽",
+  spicy: "辛香",
+  "spirit-forward": "醇厚",
 };
 
 function Icon({ kind, className = "" }: { kind: string; className?: string }) {
@@ -121,23 +129,33 @@ function Icon({ kind, className = "" }: { kind: string; className?: string }) {
 
 export default function App() {
   const [moodId, setMoodId] = useState("fresh");
-  const [owned, setOwned] = useState(["rum", "lime", "soda"]);
+  const [saved, setSaved] = useState(loadInventory);
+  const [detail, setDetail] = useState<Recommendation | null>(null);
   const [showIngredients, setShowIngredients] = useState(false);
   const demoRef = useRef<HTMLElement>(null);
   const mood = moods.find((item) => item.id === moodId)!;
   const result = useMemo(() => {
     try {
       return {
-        recommendations: getRecommendations(owned, mood.tags),
+        ...getRecommendations(saved.inventory, mood.tags),
         error: "",
       };
     } catch (error) {
       return {
         recommendations: [],
+        inventory_state: "unset" as InventoryState,
+        canonical_inventory: [] as string[],
+        unknown_inventory: [] as string[],
         error: error instanceof Error ? error.message : "推荐暂时不可用",
       };
     }
-  }, [owned, mood]);
+  }, [saved.inventory, mood]);
+  const owned = result.canonical_inventory;
+  const state = result.inventory_state;
+
+  function updateInventory(inventory: Inventory) {
+    setSaved({ inventory, warning: saveInventory(inventory) });
+  }
 
   function openIngredients() {
     setShowIngredients(true);
@@ -160,7 +178,7 @@ export default function App() {
           <a href="#moods" className="nav-active">
             心情特调
           </a>
-          <button onClick={openIngredients}>我的材料</button>
+          <button onClick={openIngredients}>我的酒柜</button>
         </nav>
         <a
           className="source-link"
@@ -194,7 +212,13 @@ export default function App() {
                   key={item.id}
                   className={`mood-button ${item.id === moodId ? "selected" : ""}`}
                   aria-pressed={item.id === moodId}
-                  onClick={() => setMoodId(item.id)}
+                  onClick={() => {
+                    setMoodId(item.id);
+                    demoRef.current?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }}
                 >
                   <span className={`mood-icon ${item.id}`}>
                     <Icon kind={item.icon} />
@@ -217,7 +241,7 @@ export default function App() {
             <div className="visual-grain" />
             <div className="visual-top">
               <span>THE MOOD COLLECTION</span>
-              <span>01 / 03</span>
+              <span>18 CLASSICS</span>
             </div>
             <div className="orbit orbit-one" />
             <div className="orbit orbit-two" />
@@ -258,47 +282,53 @@ export default function App() {
               </h2>
               <p>此刻的灵感：{mood.name}。从这些小小的可能开始。</p>
             </div>
-            <span className="example-badge">M1 技术演示 · 3 款示例</span>
+            <span className="example-badge">
+              {recipes.length} 款经典 · 用量有据可查
+            </span>
           </div>
           <div className="inventory-bar">
             <span>
               <span className="tiny-dot" />
-              已选 {owned.length} 种材料
+              {state === "unset"
+                ? "尚未录入酒柜"
+                : state === "empty"
+                  ? "已确认：酒柜暂无材料"
+                  : `已拥有 ${owned.length} 种材料`}
             </span>
             <button
               aria-expanded={showIngredients}
               aria-controls="ingredient-picker"
               onClick={() => setShowIngredients((value) => !value)}
             >
-              {showIngredients ? "收起材料" : "调整我的材料"}{" "}
+              {showIngredients ? "收起酒柜" : "打开我的酒柜"}{" "}
               <span aria-hidden="true">{showIngredients ? "−" : "+"}</span>
             </button>
           </div>
+          <p
+            className="inventory-summary"
+            role="status"
+            data-testid="inventory-summary"
+          >
+            {state === "unset"
+              ? "还不了解你的酒柜，以下是心情灵感。录入后才能判断能否制作。"
+              : state === "empty"
+                ? "你已确认没有材料，暂无可直接制作的酒。下方会列出每款所需材料。"
+                : `找到 ${result.recommendations.filter(item => item.can_make).length} 款必需材料齐全的配方，优先展示，再按心情口味排序。`}{" "}
+            仅检查材料有无，不判断剩余数量；装饰不参与匹配。
+          </p>
+          {!showIngredients && saved.warning && (
+            <p className="storage-warning" role="status">
+              {saved.warning}
+            </p>
+          )}
           {showIngredients && (
-            <fieldset id="ingredient-picker" className="ingredient-picker">
-              <legend>选择你手边的材料</legend>
-              <p>
-                勾选后即时更新推荐；当前仅检查材料是否拥有，不检查剩余用量。
-              </p>
-              <div>
-                {ingredients.map((item) => (
-                  <label key={item.id}>
-                    <input
-                      type="checkbox"
-                      checked={owned.includes(item.id)}
-                      onChange={() =>
-                        setOwned((current) =>
-                          current.includes(item.id)
-                            ? current.filter((id) => id !== item.id)
-                            : [...current, item.id],
-                        )
-                      }
-                    />
-                    <span>{item.name}</span>
-                  </label>
-                ))}
-              </div>
-            </fieldset>
+            <Cabinet
+              owned={owned}
+              state={state}
+              warning={saved.warning}
+              unknown={result.unknown_inventory}
+              onChange={updateInventory}
+            />
           )}
           {result.error ? (
             <p role="alert" className="error-message">
@@ -308,8 +338,6 @@ export default function App() {
             <div
               className="recipe-grid"
               data-testid="recommendations"
-              aria-live="polite"
-              aria-atomic="true"
             >
               {result.recommendations.map((item, index) => (
                 <article
@@ -317,60 +345,84 @@ export default function App() {
                   key={item.recipe.id}
                   data-recipe-id={item.recipe.id}
                 >
-                  <div className={`recipe-image ${item.recipe.id}`}>
-                    <span className="recipe-number">0{index + 1}</span>
-                    <span className="recipe-example">示例灵感</span>
-                    <Cocktail
-                      variant={
-                        item.recipe.id === "sunset-punch"
-                          ? "sunset"
-                          : item.recipe.id === "amber-hour"
-                            ? "amber"
-                            : "mint"
-                      }
-                    />
-                    <span className="image-caption">
-                      MIXED WITH A LITTLE MOOD
-                    </span>
-                  </div>
-                  <div className="recipe-body">
-                    <div className="recipe-title-row">
-                      <h3>{item.recipe.name}</h3>
-                      <span
-                        className={`availability ${item.can_make ? "ready" : ""}`}
-                      >
-                        {item.can_make
-                          ? "材料已齐"
-                          : `还差 ${item.missing.length} 种`}
+                  <button
+                    className="recipe-card-trigger"
+                    onClick={() => setDetail(item)}
+                    aria-label={`查看${item.recipe.name}配方`}
+                  >
+                    <div className={`recipe-image ${item.recipe.id}`}>
+                      <span className="recipe-number">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="recipe-example">
+                        {item.recipe.source.publisher === "Sipsmith"
+                          ? "Sipsmith"
+                          : "IBA"}
+                      </span>
+                      <Cocktail
+                        variant={
+                          item.recipe.tags.includes("fruity")
+                            ? "sunset"
+                            : item.recipe.tags.includes("bitter")
+                              ? "amber"
+                              : "mint"
+                        }
+                      />
+                      <span className="image-caption">
+                        MIXED WITH A LITTLE MOOD
                       </span>
                     </div>
-                    <p className="recipe-description">
-                      {item.recipe.description}
-                    </p>
-                    <div className="recipe-tags">
-                      {item.recipe.tags.map((tag) => (
+                    <div className="recipe-body">
+                      <div className="recipe-title-row">
+                        <h3>{item.recipe.name}</h3>
                         <span
-                          key={tag}
-                          className={
-                            item.matched_tags.includes(tag) ? "matched" : ""
-                          }
+                          className={`availability ${item.can_make ? "ready" : ""}`}
                         >
-                          {tagNames[tag] ?? tag}
+                          {state === "unset"
+                            ? "待录入材料"
+                            : item.can_make
+                              ? "主体材料已齐"
+                              : `还差 ${item.missing.length} 种`}
                         </span>
-                      ))}
+                      </div>
+                      <p className="recipe-description">
+                        {item.recipe.name_en}
+                      </p>
+                      <p className="recipe-meta">
+                        {item.recipe.difficulty} · 约 {item.recipe.minutes} 分钟
+                        <span>估计</span>
+                      </p>
+                      <div className="recipe-tags">
+                        {item.recipe.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className={
+                              item.matched_tags.includes(tag) ? "matched" : ""
+                            }
+                          >
+                            {tagNames[tag] ?? tag}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="missing-line">
+                        {state === "unset"
+                          ? "录入酒柜后查看缺失材料"
+                          : item.can_make
+                            ? "必需材料均已选中（不含装饰）"
+                            : `还需要：${item.missing.map((ingredient) => ingredient.name).join("、")}`}
+                      </div>
+                      <span className="detail-link">
+                        查看用量与步骤 <span aria-hidden="true">↗</span>
+                      </span>
                     </div>
-                    <div className="missing-line">
-                      {item.can_make
-                        ? "所需材料均已选中"
-                        : `还需要：${item.missing.map((ingredient) => ingredient.name).join("、")}`}
-                    </div>
-                  </div>
+                  </button>
                 </article>
               ))}
             </div>
           )}
           <p className="fixture-note">
-            示例配方仅用于验证技术链路，未经真实配方核对，不作为调制指导。
+            配方用量参考 IBA 与酒厂官方资料；时间与难度为 MixMood
+            估计。插画仅作氛围展示，不代表实际酒款外观。
           </p>
         </section>
         <aside className="closing-note">
@@ -399,6 +451,9 @@ export default function App() {
           GitHub ↗
         </a>
       </footer>
+      {detail && (
+        <RecipeDialog item={detail} onDismiss={() => setDetail(null)} />
+      )}
     </div>
   );
 }

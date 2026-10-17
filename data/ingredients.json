@@ -1,0 +1,214 @@
+[
+  {
+    "id": "white-rum",
+    "name": "白朗姆酒",
+    "name_en": "White rum",
+    "aliases": ["white rum", "white cuban rum", "白朗姆", "白朗姆酒"]
+  },
+  {
+    "id": "lime",
+    "name": "青柠",
+    "name_en": "Lime / fresh lime juice",
+    "aliases": ["lime", "lime juice", "fresh lime juice", "青柠", "青柠汁"]
+  },
+  {
+    "id": "lemon",
+    "name": "黄柠檬",
+    "name_en": "Lemon / fresh lemon juice",
+    "aliases": [
+      "lemon",
+      "lemon juice",
+      "fresh lemon juice",
+      "黄柠檬",
+      "柠檬",
+      "柠檬汁"
+    ]
+  },
+  {
+    "id": "mint",
+    "name": "薄荷",
+    "name_en": "Mint",
+    "aliases": ["mint", "mint sprigs", "薄荷", "薄荷枝"]
+  },
+  {
+    "id": "white-sugar",
+    "name": "细白砂糖",
+    "name_en": "Superfine white sugar",
+    "aliases": [
+      "sugar",
+      "white sugar",
+      "superfine sugar",
+      "白砂糖",
+      "细砂糖",
+      "细白砂糖"
+    ]
+  },
+  {
+    "id": "sugar-cube",
+    "name": "方糖",
+    "name_en": "Sugar cube",
+    "aliases": ["sugar cube", "方糖"]
+  },
+  {
+    "id": "sugar-syrup",
+    "name": "糖浆",
+    "name_en": "Sugar syrup",
+    "aliases": ["sugar syrup", "simple syrup", "糖浆", "单糖浆"]
+  },
+  {
+    "id": "soda",
+    "name": "苏打水",
+    "name_en": "Soda water",
+    "aliases": ["soda", "soda water", "club soda", "苏打水"]
+  },
+  {
+    "id": "ice",
+    "name": "冰块",
+    "name_en": "Ice",
+    "aliases": ["ice", "ice cubes", "冰", "冰块"]
+  },
+  {
+    "id": "tequila",
+    "name": "龙舌兰酒",
+    "name_en": "100% agave tequila",
+    "aliases": ["tequila", "100% agave tequila", "龙舌兰", "龙舌兰酒"]
+  },
+  {
+    "id": "triple-sec",
+    "name": "橙味利口酒",
+    "name_en": "Triple sec",
+    "aliases": ["triple sec", "cointreau", "君度", "橙味利口酒", "三重橙酒"]
+  },
+  {
+    "id": "gin",
+    "name": "金酒",
+    "name_en": "Gin",
+    "aliases": ["gin", "london dry gin", "金酒", "琴酒", "杜松子酒"]
+  },
+  {
+    "id": "tonic",
+    "name": "汤力水",
+    "name_en": "Tonic water",
+    "aliases": ["tonic", "tonic water", "汤力水", "通宁水"]
+  },
+  {
+    "id": "campari",
+    "name": "金巴利",
+    "name_en": "Campari",
+    "aliases": ["campari", "bitter campari", "金巴利"]
+  },
+  {
+    "id": "sweet-vermouth",
+    "name": "甜红味美思",
+    "name_en": "Sweet red vermouth",
+    "aliases": [
+      "sweet vermouth",
+      "sweet red vermouth",
+      "rosso vermouth",
+      "甜味美思",
+      "甜红味美思"
+    ]
+  },
+  {
+    "id": "dry-vermouth",
+    "name": "干味美思",
+    "name_en": "Dry vermouth",
+    "aliases": ["dry vermouth", "干味美思"]
+  },
+  {
+    "id": "vodka",
+    "name": "伏特加",
+    "name_en": "Vodka",
+    "aliases": ["vodka", "smirnoff vodka", "伏特加"]
+  },
+  {
+    "id": "coffee-liqueur",
+    "name": "咖啡利口酒",
+    "name_en": "Coffee liqueur",
+    "aliases": [
+      "coffee liqueur",
+      "kahlua",
+      "kahlúa",
+      "甘露",
+      "甘露咖啡酒",
+      "咖啡利口酒"
+    ]
+  },
+  {
+    "id": "cognac",
+    "name": "干邑白兰地",
+    "name_en": "Cognac",
+    "aliases": ["cognac", "干邑", "干邑白兰地"]
+  },
+  {
+    "id": "rye",
+    "name": "黑麦威士忌",
+    "name_en": "Rye whiskey",
+    "aliases": ["rye", "rye whiskey", "黑麦威士忌"]
+  },
+  {
+    "id": "bourbon",
+    "name": "波本威士忌",
+    "name_en": "Bourbon whiskey",
+    "aliases": ["bourbon", "bourbon whiskey", "波本", "波本威士忌"]
+  },
+  {
+    "id": "angostura",
+    "name": "安格仕苦精",
+    "name_en": "Angostura bitters",
+    "aliases": [
+      "angostura",
+      "angostura bitters",
+      "安格仕苦精",
+      "安哥斯图拉苦精"
+    ]
+  },
+  {
+    "id": "cola",
+    "name": "可乐",
+    "name_en": "Cola",
+    "aliases": ["cola", "可乐"]
+  },
+  {
+    "id": "ginger-beer",
+    "name": "姜汁啤酒",
+    "name_en": "Ginger beer",
+    "aliases": ["ginger beer", "姜汁啤酒"]
+  },
+  {
+    "id": "orange-juice",
+    "name": "橙汁",
+    "name_en": "Fresh orange juice",
+    "aliases": ["orange juice", "fresh orange juice", "橙汁"]
+  },
+  {
+    "id": "grenadine",
+    "name": "红石榴糖浆",
+    "name_en": "Grenadine syrup",
+    "aliases": ["grenadine", "grenadine syrup", "红石榴糖浆"]
+  },
+  {
+    "id": "champagne",
+    "name": "香槟",
+    "name_en": "Champagne",
+    "aliases": ["champagne", "香槟"]
+  },
+  {
+    "id": "espresso",
+    "name": "浓缩咖啡",
+    "name_en": "Strong espresso",
+    "aliases": ["espresso", "strong espresso", "浓缩咖啡", "意式浓缩"]
+  },
+  {
+    "id": "water",
+    "name": "饮用水",
+    "name_en": "Plain water",
+    "aliases": ["water", "plain water", "水", "饮用水"]
+  },
+  {
+    "id": "salt",
+    "name": "盐",
+    "name_en": "Salt",
+    "aliases": ["salt", "盐", "食盐"]
+  }
+]

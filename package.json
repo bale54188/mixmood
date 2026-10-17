@@ -12,7 +12,7 @@
   "scripts": {
     "build:engine": "node scripts/build-engine.mjs",
     "test:engine": "node scripts/test-engine.mjs",
-    "test:integration": "node --test tests/engine.integration.test.mjs",
+    "test:integration": "node --test tests/engine.integration.test.mjs tests/inventory.integration.test.mjs tests/recipes.test.mjs",
     "test": "npm run build:engine && npm run test:engine && npm run test:integration",
     "build": "npm run build:engine && npm --workspace web run build",
     "dev": "npm run build:engine && npm --workspace web run dev",

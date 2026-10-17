@@ -13,6 +13,17 @@ test("homepage calls compiled MoonBit and responds to mood and ingredient change
       response.url().includes("/src/generated/engine.mjs") &&
       response.status() === 200,
   );
+  // M1 interaction regression, migrated to the real M2 catalog and explicit user stock.
+  await page.addInitScript(() =>
+    localStorage.setItem(
+      "mixmood.inventory.v1",
+      JSON.stringify({
+        version: 1,
+        status: "set",
+        owned: ["white-rum", "lime", "soda", "white-sugar"],
+      }),
+    ),
+  );
   await page.goto("/");
   expect(await (await moduleResponse).text()).toContain("recommend_json");
   await expect(
@@ -20,18 +31,19 @@ test("homepage calls compiled MoonBit and responds to mood and ingredient change
   ).toBeVisible();
   await expect(page.locator(".mood-button")).toHaveCount(6);
   const first = page.locator(".recipe-card").first();
-  await expect(first).toHaveAttribute("data-recipe-id", "mint-spark");
-  await expect(first).toContainText("还需要：薄荷");
+  await expect(first).toHaveAttribute("data-recipe-id", "daiquiri");
+  const mojito = page.locator('[data-recipe-id="mojito"]');
+  await expect(mojito).toContainText("还需要：薄荷");
   await page.getByRole("button", { name: /甜蜜果香/ }).click();
-  await expect(first).toHaveAttribute("data-recipe-id", "sunset-punch");
+  await expect(first).toHaveAttribute("data-recipe-id", "tequila-sunrise");
   await page.getByRole("button", { name: /清爽放松/ }).click();
   await page.getByRole("button", { name: "看看我的材料能调什么" }).click();
   await page.getByRole("checkbox", { name: "薄荷", exact: true }).check();
-  await expect(first).toHaveAttribute("data-recipe-id", "mint-spark");
-  await expect(first).toContainText("材料已齐");
-  await expect(first).toContainText("所需材料均已选中");
+  await page.getByRole("checkbox", { name: "冰块", exact: true }).check();
+  await expect(mojito).toContainText("材料已齐");
+  await expect(mojito).toContainText("必需材料均已选中");
   await page.getByRole("checkbox", { name: "薄荷", exact: true }).uncheck();
-  await expect(first).toContainText("还需要：薄荷");
+  await expect(mojito).toContainText("还需要：薄荷");
   await expect(page.getByRole("alert")).toHaveCount(0);
   expect(errors).toEqual([]);
 });
@@ -71,8 +83,8 @@ test("mobile layout has no horizontal overflow and the material entry works", as
     page.getByRole("heading", { name: "今晚是什么心情？" }),
   ).toBeVisible();
   await page.getByRole("button", { name: "看看我的材料能调什么" }).click();
-  await expect(page.getByRole("checkbox", { name: "朗姆酒" })).toBeVisible();
-  await expect(page.locator(".recipe-card")).toHaveCount(3);
+  await expect(page.getByRole("checkbox", { name: "白朗姆酒" })).toBeVisible();
+  await expect(page.locator(".recipe-card")).toHaveCount(18);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= window.innerWidth,

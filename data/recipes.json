@@ -1,0 +1,1072 @@
+[
+  {
+    "id": "mojito",
+    "name": "莫吉托",
+    "name_en": "Mojito",
+    "description": "Mojito · 经典配方",
+    "tags": ["fresh", "citrus", "bubbly"],
+    "difficulty": "进阶",
+    "minutes": 5,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "white-rum",
+        "name": "古巴白朗姆酒",
+        "amount": 45,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "lime",
+        "name": "鲜榨青柠汁",
+        "amount": 20,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "mint",
+        "name": "薄荷枝",
+        "amount": 6,
+        "unit": "枝",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "white-sugar",
+        "name": "白蔗糖",
+        "amount": 2,
+        "unit": "茶匙",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "soda",
+        "name": "苏打水",
+        "amount": null,
+        "unit": "补满",
+        "amount_note": "先加少量，最后补满；IBA 未提供毫升数。",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "杯中混合薄荷、糖与青柠汁。",
+      "先加少量苏打水，再装入冰块。",
+      "倒入朗姆酒，以苏打水补满，轻轻搅拌。"
+    ],
+    "garnish": "薄荷枝与青柠片（装饰，不参与材料匹配）。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/mojito/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "margarita",
+    "name": "玛格丽特",
+    "name_en": "Margarita",
+    "description": "Margarita · 经典配方",
+    "tags": ["citrus", "fresh"],
+    "difficulty": "进阶",
+    "minutes": 4,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "tequila",
+        "name": "100% 龙舌兰酒",
+        "amount": 50,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "triple-sec",
+        "name": "Triple sec 橙味利口酒",
+        "amount": 20,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "lime",
+        "name": "鲜榨青柠汁",
+        "amount": 15,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "salt",
+        "name": "盐",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "可选的半圈盐口，来源未定量。",
+        "optional": true,
+        "alternatives": []
+      }
+    ],
+    "steps": ["将酒与青柠汁倒入加冰的摇酒壶。", "摇匀后过滤至预冷的鸡尾酒杯。"],
+    "garnish": "可选：半圈盐口。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/margarita/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "daiquiri",
+    "name": "戴基里",
+    "name_en": "Daiquiri",
+    "description": "Daiquiri · 经典配方",
+    "tags": ["citrus", "fresh"],
+    "difficulty": "进阶",
+    "minutes": 4,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "white-rum",
+        "name": "古巴白朗姆酒",
+        "amount": 60,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "lime",
+        "name": "鲜榨青柠汁",
+        "amount": 20,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "white-sugar",
+        "name": "超细砂糖",
+        "amount": 2,
+        "unit": "吧匙",
+        "amount_note": "保留 IBA 的 bar spoon 单位，不换算成 ml。",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "先在摇酒壶中搅拌朗姆酒、青柠汁和糖，令糖溶解。",
+      "加入冰块摇匀，过滤至预冷的鸡尾酒杯。"
+    ],
+    "garnish": "无。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/daiquiri/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "gin-tonic",
+    "name": "金汤力",
+    "name_en": "Gin & Tonic",
+    "description": "Gin & Tonic · 经典配方",
+    "tags": ["fresh", "bitter", "bubbly"],
+    "difficulty": "简单",
+    "minutes": 3,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "gin",
+        "name": "London Dry Gin",
+        "amount": 50,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "tonic",
+        "name": "汤力水",
+        "amount": 150,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "高球杯中装入冰块，倒入金酒。",
+      "加入冰镇汤力水，从杯底向上轻轻带匀。"
+    ],
+    "garnish": "青柠皮扭条（装饰，不参与材料匹配）。",
+    "source": {
+      "publisher": "Sipsmith",
+      "url": "https://sipsmith.com/cocktails/perfect-gin-tonic/",
+      "checked_on": "2026-10-17",
+      "notes": "采用 Sipsmith 官方 Classic Gin & Tonic 的 50:150 配比；不是 IBA 认证配方。"
+    }
+  },
+  {
+    "id": "negroni",
+    "name": "尼格罗尼",
+    "name_en": "Negroni",
+    "description": "Negroni · 经典配方",
+    "tags": ["bitter", "citrus"],
+    "difficulty": "简单",
+    "minutes": 3,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "gin",
+        "name": "金酒",
+        "amount": 30,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "campari",
+        "name": "金巴利",
+        "amount": 30,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "sweet-vermouth",
+        "name": "甜红味美思",
+        "amount": 30,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "将金酒、金巴利和甜红味美思倒入预冷且装有冰块的古典杯。",
+      "轻轻搅拌均匀。"
+    ],
+    "garnish": "半片橙（装饰，不参与材料匹配）。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/negroni/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "americano",
+    "name": "美式鸡尾酒",
+    "name_en": "Americano",
+    "description": "Americano · 经典配方",
+    "tags": ["bitter", "bubbly"],
+    "difficulty": "简单",
+    "minutes": 3,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "campari",
+        "name": "金巴利",
+        "amount": 30,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "sweet-vermouth",
+        "name": "甜红味美思",
+        "amount": 30,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "soda",
+        "name": "苏打水",
+        "amount": null,
+        "unit": "少量",
+        "amount_note": "来源为 a splash，未提供 ml。",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": ["将金巴利和甜红味美思倒入装冰的古典杯。", "加少量苏打水后轻搅。"],
+    "garnish": "半片橙与柠檬皮（装饰，不参与材料匹配）。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/americano/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "black-russian",
+    "name": "黑俄罗斯",
+    "name_en": "Black Russian",
+    "description": "Black Russian · 经典配方",
+    "tags": ["sweet", "coffee"],
+    "difficulty": "简单",
+    "minutes": 3,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "vodka",
+        "name": "伏特加",
+        "amount": 50,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "coffee-liqueur",
+        "name": "咖啡利口酒",
+        "amount": 20,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "将伏特加和咖啡利口酒加入装冰的古典杯，轻搅。",
+      "过滤至另一个装有冰块的古典杯。"
+    ],
+    "garnish": "无。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/black-russian/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "white-lady",
+    "name": "白色佳人",
+    "name_en": "White Lady",
+    "description": "White Lady · 经典配方",
+    "tags": ["citrus", "fresh"],
+    "difficulty": "进阶",
+    "minutes": 4,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "gin",
+        "name": "金酒",
+        "amount": 40,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "triple-sec",
+        "name": "橙味利口酒",
+        "amount": 30,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "lemon",
+        "name": "鲜榨柠檬汁",
+        "amount": 20,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": ["将原料倒入摇酒壶，加入冰块摇匀。", "过滤至预冷的鸡尾酒杯。"],
+    "garnish": "无。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/white-lady/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "sidecar",
+    "name": "边车",
+    "name_en": "Sidecar",
+    "description": "Sidecar · 经典配方",
+    "tags": ["citrus", "fruity"],
+    "difficulty": "进阶",
+    "minutes": 4,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "cognac",
+        "name": "干邑白兰地",
+        "amount": 50,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "triple-sec",
+        "name": "橙味利口酒",
+        "amount": 20,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "lemon",
+        "name": "鲜榨柠檬汁",
+        "amount": 20,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "将干邑、橙味利口酒和柠檬汁加入摇酒壶。",
+      "加冰摇匀，过滤至预冷的鸡尾酒杯。"
+    ],
+    "garnish": "无。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/sidecar/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "manhattan",
+    "name": "曼哈顿",
+    "name_en": "Manhattan",
+    "description": "Manhattan · 经典配方",
+    "tags": ["bitter", "spirit-forward"],
+    "difficulty": "进阶",
+    "minutes": 4,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "rye",
+        "name": "黑麦威士忌",
+        "amount": 50,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "sweet-vermouth",
+        "name": "甜红味美思",
+        "amount": 20,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "angostura",
+        "name": "安格仕苦精",
+        "amount": 1,
+        "unit": "dash",
+        "amount_note": "保留 dash 原单位；不将一振虚构为固定 ml。",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "将所有液体原料加入装有冰块的调酒杯。",
+      "充分搅拌，过滤至预冷的鸡尾酒杯。"
+    ],
+    "garnish": "鸡尾酒樱桃（装饰，不参与材料匹配）。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/manhattan/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "dry-martini",
+    "name": "干马天尼",
+    "name_en": "Dry Martini",
+    "description": "Dry Martini · 经典配方",
+    "tags": ["dry", "spirit-forward"],
+    "difficulty": "进阶",
+    "minutes": 4,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "gin",
+        "name": "金酒",
+        "amount": 60,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "dry-vermouth",
+        "name": "干味美思",
+        "amount": 10,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "将金酒与干味美思加入装冰的调酒杯，搅拌冷却。",
+      "过滤至预冷的马天尼杯。"
+    ],
+    "garnish": "挤入柠檬皮油；也可按需求用绿橄榄（装饰，不参与匹配）。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/dry-martini/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "cuba-libre",
+    "name": "自由古巴",
+    "name_en": "Cuba Libre",
+    "description": "Cuba Libre · 经典配方",
+    "tags": ["sweet", "citrus", "bubbly"],
+    "difficulty": "简单",
+    "minutes": 3,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "white-rum",
+        "name": "白朗姆酒",
+        "amount": 50,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "cola",
+        "name": "可乐",
+        "amount": 120,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "lime",
+        "name": "鲜榨青柠汁",
+        "amount": 10,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "高球杯中装入冰块。",
+      "依次加入白朗姆酒、可乐和青柠汁，在杯中调和。"
+    ],
+    "garnish": "青柠角（装饰，不参与材料匹配）。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/cuba-libre/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "moscow-mule",
+    "name": "莫斯科骡子",
+    "name_en": "Moscow Mule",
+    "description": "Moscow Mule · 经典配方",
+    "tags": ["fresh", "citrus", "spicy", "bubbly"],
+    "difficulty": "简单",
+    "minutes": 3,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "vodka",
+        "name": "伏特加（IBA 指定 Smirnoff）",
+        "amount": 45,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ginger-beer",
+        "name": "姜汁啤酒",
+        "amount": 120,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "lime",
+        "name": "鲜榨青柠汁",
+        "amount": 10,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": ["杯中备好冰块，倒入伏特加与姜汁啤酒。", "加入青柠汁，轻轻搅拌。"],
+    "garnish": "青柠片（装饰，不参与材料匹配）。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/moscow-mule/",
+      "checked_on": "2026-10-17",
+      "notes": "液体用量依 IBA；加冰步骤参考 Smirnoff 官方 Mule 页面，不混用其不同版本的液体配比。",
+      "supplement": "https://www.smirnoff.com/en-us/all-cocktails/cocktail-recipes/smirnoff-mule"
+    }
+  },
+  {
+    "id": "tequila-sunrise",
+    "name": "龙舌兰日出",
+    "name_en": "Tequila Sunrise",
+    "description": "Tequila Sunrise · 经典配方",
+    "tags": ["sweet", "fruity", "tropical"],
+    "difficulty": "简单",
+    "minutes": 3,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "tequila",
+        "name": "龙舌兰酒",
+        "amount": 45,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "orange-juice",
+        "name": "鲜橙汁",
+        "amount": 90,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "grenadine",
+        "name": "红石榴糖浆",
+        "amount": 15,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "将龙舌兰酒与橙汁倒入装有冰块的高球杯。",
+      "加入红石榴糖浆形成渐层，不搅拌。"
+    ],
+    "garnish": "半片橙或橙皮（装饰，不参与材料匹配）。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/tequila-sunrise/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "french-75",
+    "name": "法式七五",
+    "name_en": "French 75",
+    "description": "French 75 · 经典配方",
+    "tags": ["citrus", "bubbly"],
+    "difficulty": "进阶",
+    "minutes": 5,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "gin",
+        "name": "金酒",
+        "amount": 30,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "lemon",
+        "name": "鲜榨柠檬汁",
+        "amount": 15,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "sugar-syrup",
+        "name": "糖浆",
+        "amount": 15,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "champagne",
+        "name": "香槟",
+        "amount": 60,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "将金酒、柠檬汁和糖浆倒入摇酒壶摇匀。",
+      "过滤至香槟笛杯，加入 60 ml 香槟，轻轻搅拌。"
+    ],
+    "garnish": "无。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/french-75/",
+      "checked_on": "2026-10-17",
+      "notes": "IBA 方法未明确量化制冷介质；请预冷杯与材料。此记录不额外虚构冰的数量。"
+    }
+  },
+  {
+    "id": "espresso-martini",
+    "name": "浓缩咖啡马天尼",
+    "name_en": "Espresso Martini",
+    "description": "Espresso Martini · 经典配方",
+    "tags": ["sweet", "coffee"],
+    "difficulty": "进阶",
+    "minutes": 5,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "vodka",
+        "name": "伏特加",
+        "amount": 50,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "coffee-liqueur",
+        "name": "Kahlúa 咖啡利口酒",
+        "amount": 30,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "sugar-syrup",
+        "name": "糖浆",
+        "amount": 10,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "espresso",
+        "name": "浓缩咖啡",
+        "amount": 1,
+        "unit": "份",
+        "amount_note": "来源为 1 strong Espresso，未注明固定 ml。",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "将伏特加、咖啡利口酒、糖浆与一份浓缩咖啡加入摇酒壶。",
+      "加冰充分摇匀，过滤至预冷的鸡尾酒杯。"
+    ],
+    "garnish": "3 颗咖啡豆（装饰，不参与材料匹配）。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/espresso-martini/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "boulevardier",
+    "name": "林荫大道",
+    "name_en": "Boulevardier",
+    "description": "Boulevardier · 经典配方",
+    "tags": ["bitter", "spirit-forward"],
+    "difficulty": "进阶",
+    "minutes": 4,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "bourbon",
+        "name": "波本或黑麦威士忌",
+        "amount": 45,
+        "unit": "ml",
+        "amount_note": "IBA 允许波本或黑麦，拥有任意一种即可。",
+        "optional": false,
+        "alternatives": ["rye"]
+      },
+      {
+        "id": "campari",
+        "name": "金巴利",
+        "amount": 30,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "sweet-vermouth",
+        "name": "甜红味美思",
+        "amount": 30,
+        "unit": "ml",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "将威士忌、金巴利与甜红味美思加入装冰的调酒杯。",
+      "充分搅拌后过滤至预冷的鸡尾酒杯。"
+    ],
+    "garnish": "橙皮；也可选柠檬皮（装饰，不参与材料匹配）。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/boulevardier/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  },
+  {
+    "id": "old-fashioned",
+    "name": "古典鸡尾酒",
+    "name_en": "Old Fashioned",
+    "description": "Old Fashioned · 经典配方",
+    "tags": ["bitter", "spirit-forward"],
+    "difficulty": "进阶",
+    "minutes": 5,
+    "estimate_note": "难度与时间为 MixMood 编辑估计，不含制冰、备料或糖浆制作。",
+    "ingredients": [
+      {
+        "id": "bourbon",
+        "name": "波本或黑麦威士忌",
+        "amount": 45,
+        "unit": "ml",
+        "amount_note": "IBA 允许波本或黑麦，拥有任意一种即可。",
+        "optional": false,
+        "alternatives": ["rye"]
+      },
+      {
+        "id": "sugar-cube",
+        "name": "方糖",
+        "amount": 1,
+        "unit": "块",
+        "amount_note": "",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "angostura",
+        "name": "安格仕苦精",
+        "amount": null,
+        "unit": "数 dash",
+        "amount_note": "来源为 few dashes，不指定振数或 ml。",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "water",
+        "name": "饮用水",
+        "amount": null,
+        "unit": "数 dash",
+        "amount_note": "来源为 few dashes，不虚构固定 ml。",
+        "optional": false,
+        "alternatives": []
+      },
+      {
+        "id": "ice",
+        "name": "冰块",
+        "amount": null,
+        "unit": "按需",
+        "amount_note": "用于制冷或摇和；来源未给定固定数量。",
+        "optional": false,
+        "alternatives": []
+      }
+    ],
+    "steps": [
+      "古典杯中放方糖，以苦精润湿，再加数振饮用水，压拌至糖溶解。",
+      "装入冰块，加入威士忌并轻搅。"
+    ],
+    "garnish": "橙片或橙皮，以及鸡尾酒樱桃（装饰，不参与材料匹配）。",
+    "source": {
+      "publisher": "International Bartenders Association (IBA)",
+      "url": "https://iba-world.com/iba-cocktail/old-fashioned/",
+      "checked_on": "2026-10-17",
+      "notes": ""
+    }
+  }
+]
