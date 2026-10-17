@@ -1,0 +1,36 @@
+[
+  {
+    "id": "mint-spark",
+    "name": "薄荷气泡",
+    "description": "一抹青柠，给今晚一点轻盈。",
+    "tags": ["fresh", "citrus", "bubbly"],
+    "ingredients": [
+      { "id": "rum", "name": "朗姆酒" },
+      { "id": "lime", "name": "青柠" },
+      { "id": "mint", "name": "薄荷" },
+      { "id": "soda", "name": "苏打水" }
+    ]
+  },
+  {
+    "id": "sunset-punch",
+    "name": "落日果语",
+    "description": "把热带的日落，装进一杯好心情。",
+    "tags": ["sweet", "fruity", "tropical"],
+    "ingredients": [
+      { "id": "rum", "name": "朗姆酒" },
+      { "id": "pineapple", "name": "菠萝汁" },
+      { "id": "lime", "name": "青柠" }
+    ]
+  },
+  {
+    "id": "amber-hour",
+    "name": "琥珀时刻",
+    "description": "让微苦与柑橘，陪你慢下来。",
+    "tags": ["bitter", "citrus"],
+    "ingredients": [
+      { "id": "gin", "name": "金酒" },
+      { "id": "bitter", "name": "苦味利口酒" },
+      { "id": "vermouth", "name": "甜味美思" }
+    ]
+  }
+]

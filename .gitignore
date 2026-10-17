@@ -1,0 +1,17 @@
+node_modules/
+web/dist/
+engine/_build/
+engine/target/
+engine/.mooncakes/
+web/src/generated/*.mjs
+test-results/
+playwright-report/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
