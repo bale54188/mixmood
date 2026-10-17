@@ -13,9 +13,13 @@
     "build:engine": "node scripts/build-engine.mjs",
     "test:engine": "node scripts/test-engine.mjs",
     "test:integration": "node --test tests/engine.integration.test.mjs tests/inventory.integration.test.mjs tests/recipes.test.mjs",
-    "test": "npm run build:engine && npm run test:engine && npm run test:integration",
+    "test": "npm run build:engine && npm run test:engine && npm run test:integration && npm run test:server",
     "build": "npm run build:engine && npm --workspace web run build",
-    "dev": "npm run build:engine && npm --workspace web run dev",
+    "dev": "npm run build:engine && node scripts/dev.mjs",
+    "dev:web": "npm --workspace web run dev",
+    "dev:server": "node server/index.mjs",
+    "start": "node server/index.mjs",
+    "test:server": "node --test tests/ai.server.test.mjs",
     "test:e2e": "playwright test"
   },
   "devDependencies": {

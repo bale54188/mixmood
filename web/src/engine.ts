@@ -1,6 +1,10 @@
 import recipeData from "../../data/recipes.json";
 import materialData from "../../data/ingredients.json";
-import { recommend_inventory_json } from "./generated/engine.mjs";
+import {
+  recommend_inventory_json,
+  recommend_preferences_json,
+} from "./generated/engine.mjs";
+import type { AiPreferences } from "./ai";
 
 export interface Material {
   id: string;
@@ -70,12 +74,16 @@ export const recipes: Recipe[] = recipeData;
 const recipesById = new Map(recipes.map((recipe) => [recipe.id, recipe]));
 
 // Serializes and joins display metadata only; compiled MoonBit owns all matching and ranking.
-export function getRecommendations(inventory: Inventory, tags: string[]) {
+export function getRecommendations(
+  inventory: Inventory,
+  tags: string[],
+  preferences?: AiPreferences | null,
+) {
   const response = JSON.parse(
-    recommend_inventory_json(
+    (preferences ? recommend_preferences_json : recommend_inventory_json)(
       JSON.stringify(recipes),
       JSON.stringify(inventory),
-      JSON.stringify(tags),
+      JSON.stringify(preferences ?? tags),
       JSON.stringify(ingredients),
     ),
   ) as EngineResponse;

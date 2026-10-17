@@ -1,0 +1,20 @@
+{
+  "flavors": [
+    { "id": "fresh", "label": "清新" },
+    { "id": "citrus", "label": "柑橘" },
+    { "id": "bubbly", "label": "气泡" },
+    { "id": "bitter", "label": "微苦" },
+    { "id": "sweet", "label": "甜润" },
+    { "id": "coffee", "label": "咖啡" },
+    { "id": "fruity", "label": "果香" },
+    { "id": "spirit-forward", "label": "醇厚" },
+    { "id": "dry", "label": "干爽" },
+    { "id": "spicy", "label": "辛香" },
+    { "id": "tropical", "label": "热带" }
+  ],
+  "difficulties": [
+    { "id": "any", "label": "难度不限", "recipe_value": "" },
+    { "id": "easy", "label": "制作简单", "recipe_value": "简单" },
+    { "id": "intermediate", "label": "可接受进阶", "recipe_value": "进阶" }
+  ]
+}

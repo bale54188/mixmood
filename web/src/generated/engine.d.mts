@@ -11,3 +11,10 @@ export function recommend_inventory_json(
   tags: string,
   materials: string,
 ): string;
+
+export function recommend_preferences_json(
+  recipes: string,
+  inventory: string,
+  preferences: string,
+  materials: string,
+): string;

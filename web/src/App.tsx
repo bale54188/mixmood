@@ -6,6 +6,8 @@ import type { Inventory, InventoryState, Recommendation } from "./engine";
 import { loadInventory, saveInventory } from "./inventory";
 import { Cabinet } from "./Cabinet";
 import { RecipeDialog } from "./RecipeDialog";
+import { AiPanel } from "./AiPanel";
+import type { AiPreferences } from "./ai";
 
 const moods = [
   {
@@ -129,6 +131,10 @@ function Icon({ kind, className = "" }: { kind: string; className?: string }) {
 
 export default function App() {
   const [moodId, setMoodId] = useState("fresh");
+  const [aiPreferences, setAiPreferences] = useState<AiPreferences | null>(
+    null,
+  );
+  const [aiReset, setAiReset] = useState(0);
   const [saved, setSaved] = useState(loadInventory);
   const [detail, setDetail] = useState<Recommendation | null>(null);
   const [showIngredients, setShowIngredients] = useState(false);
@@ -137,7 +143,7 @@ export default function App() {
   const result = useMemo(() => {
     try {
       return {
-        ...getRecommendations(saved.inventory, mood.tags),
+        ...getRecommendations(saved.inventory, mood.tags, aiPreferences),
         error: "",
       };
     } catch (error) {
@@ -149,7 +155,7 @@ export default function App() {
         error: error instanceof Error ? error.message : "推荐暂时不可用",
       };
     }
-  }, [saved.inventory, mood]);
+  }, [saved.inventory, mood, aiPreferences]);
   const owned = result.canonical_inventory;
   const state = result.inventory_state;
 
@@ -210,10 +216,12 @@ export default function App() {
               {moods.map((item) => (
                 <button
                   key={item.id}
-                  className={`mood-button ${item.id === moodId ? "selected" : ""}`}
-                  aria-pressed={item.id === moodId}
+                  className={`mood-button ${!aiPreferences && item.id === moodId ? "selected" : ""}`}
+                  aria-pressed={!aiPreferences && item.id === moodId}
                   onClick={() => {
                     setMoodId(item.id);
+                    setAiPreferences(null);
+                    setAiReset((value) => value + 1);
                     demoRef.current?.scrollIntoView({
                       behavior: "smooth",
                       block: "start",
@@ -268,6 +276,17 @@ export default function App() {
           </div>
         </section>
 
+        <AiPanel
+          resetToken={aiReset}
+          active={aiPreferences}
+          onSuccess={(preferences) => {
+            setAiPreferences(preferences);
+            demoRef.current?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }}
+        />
         <section
           className="recommendation-section"
           ref={demoRef}
@@ -280,7 +299,11 @@ export default function App() {
               <h2 id="recommendation-title">
                 为你的心情，调一杯<span>✧</span>
               </h2>
-              <p>此刻的灵感：{mood.name}。从这些小小的可能开始。</p>
+              <p>
+                此刻的灵感：
+                {aiPreferences ? aiPreferences.description : mood.name}
+                。从这些小小的可能开始。
+              </p>
             </div>
             <span className="example-badge">
               {recipes.length} 款经典 · 用量有据可查
@@ -313,7 +336,7 @@ export default function App() {
               ? "还不了解你的酒柜，以下是心情灵感。录入后才能判断能否制作。"
               : state === "empty"
                 ? "你已确认没有材料，暂无可直接制作的酒。下方会列出每款所需材料。"
-                : `找到 ${result.recommendations.filter(item => item.can_make).length} 款必需材料齐全的配方，优先展示，再按心情口味排序。`}{" "}
+                : `找到 ${result.recommendations.filter((item) => item.can_make).length} 款必需材料齐全的配方，优先展示，再按心情口味排序。`}{" "}
             仅检查材料有无，不判断剩余数量；装饰不参与匹配。
           </p>
           {!showIngredients && saved.warning && (
@@ -335,10 +358,7 @@ export default function App() {
               推荐引擎调用失败：{result.error}
             </p>
           ) : (
-            <div
-              className="recipe-grid"
-              data-testid="recommendations"
-            >
+            <div className="recipe-grid" data-testid="recommendations">
               {result.recommendations.map((item, index) => (
                 <article
                   className="recipe-card"
